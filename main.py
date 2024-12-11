@@ -10,17 +10,17 @@ class Window(QWidget):
     def __init__(self):
         super().__init__()
 
-        # Set window properties such as title, size, and icon
+        # геометрия окна
         self.setWindowTitle("Codeloop - PyQt5 Media Player")
         self.setGeometry(350, 100, 700, 500)
         self.setWindowIcon(QIcon('icon.png'))
 
-        # Initialize the user interface
+        # инициализация интерфейса
         self.init_ui()
         self.show()
 
     def init_ui(self):
-        # инициализация
+        # создание плеера
         self.mediaPlayer = QMediaPlayer(None, QMediaPlayer.VideoSurface)
         videowidget = QVideoWidget()
 
