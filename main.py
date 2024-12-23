@@ -12,7 +12,6 @@ class Window(QWidget):
         super().__init__()
         self.setWindowTitle("SH mediaplayer")
         self.setGeometry(350, 100, 700, 500)
-        self.setWindowIcon(QIcon('icon.png'))
         self.init_ui()
         self.show()
 
