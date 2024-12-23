@@ -11,7 +11,7 @@ class Window(QWidget):
         super().__init__()
 
         # геометрия окна
-        self.setWindowTitle("Codeloop - PyQt5 Media Player")
+        self.setWindowTitle("SH mediaplayer")
         self.setGeometry(350, 100, 700, 500)
         self.setWindowIcon(QIcon('icon.png'))
 
