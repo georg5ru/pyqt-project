@@ -26,9 +26,9 @@ class Window(QWidget):
         self.pause_button = QPushButton('Pause')
         self.pause_button.setEnabled(False)
         self.pause_button.clicked.connect(self.pause_video)
-        self.stopBtn = QPushButton('Stop')
-        self.stopBtn.setEnabled(False)
-        self.stopBtn.clicked.connect(self.stop_video)
+        self.stop_button = QPushButton('Stop')
+        self.stop_button.setEnabled(False)
+        self.stop_button.clicked.connect(self.stop_video)
         self.positionSlider = QSlider(Qt.Horizontal)
         self.positionSlider.setRange(0, 0)
         self.positionSlider.sliderMoved.connect(self.set_position)
@@ -41,7 +41,7 @@ class Window(QWidget):
         hbox.addWidget(open_button)
         hbox.addWidget(self.play_button)
         hbox.addWidget(self.pause_button)
-        hbox.addWidget(self.stopBtn)
+        hbox.addWidget(self.stop_button)
         hbox.addWidget(self.positionSlider)
         hbox.addWidget(self.volumeSlider)
         vbox = QVBoxLayout()
@@ -59,7 +59,7 @@ class Window(QWidget):
             self.mediaPlayer.setMedia(QMediaContent(QUrl.fromLocalFile(filename)))
             self.play_button.setEnabled(True)
             self.pause_button.setEnabled(True)
-            self.stopBtn.setEnabled(True)
+            self.stop_button.setEnabled(True)
 
     def play_video(self):
         self.mediaPlayer.play()
@@ -74,11 +74,11 @@ class Window(QWidget):
         if self.mediaPlayer.state() == QMediaPlayer.PlayingState:
             self.play_button.setEnabled(False)
             self.pause_button.setEnabled(True)
-            self.stopBtn.setEnabled(True)
+            self.stop_button.setEnabled(True)
         else:
             self.play_button.setEnabled(True)
             self.pause_button.setEnabled(False)
-            self.stopBtn.setEnabled(False)
+            self.stop_button.setEnabled(False)
 
     def position_changed(self, position):
         self.positionSlider.setValue(position)
